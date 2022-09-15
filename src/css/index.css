@@ -1,0 +1,128 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  font-family: 'Architects Daughter', cursive;
+  color: #212121;
+  background-color: #e2e2e2;
+  margin-top: 0px;
+  background: linear-gradient(#bbb, transparent 1px),
+    linear-gradient(90deg, #bbb, transparent 1px);
+  background-size: 20px 20px;
+  background-position: center center;
+}
+
+.isHidden {
+  display: none;
+}
+.header {
+  display: flex;
+  width: 100%;
+  padding: 20px 50px;
+  justify-content: center;
+  background-color: rgb(161, 44, 167);
+}
+input {
+  padding-left: 10px;
+}
+input,
+.btn-submit,
+.load-more {
+  font-family: 'Architects Daughter', cursive;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: none;
+  border-radius: 10px;
+  background-color: #e2e2e2;
+  box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.75);
+}
+
+.photo-card {
+  width: calc(100% / 4 - 30px);
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.info {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(161, 44, 167);
+  color: #e2e2e2;
+  padding: 5px 5px;
+  border-top: none;
+  box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.75);
+}
+
+.info-item {
+  padding-left: 3px;
+  padding-right: 3px;
+  font-size: 10px;
+  line-height: 1.5em;
+}
+.photo-card__img {
+  width: 100%;
+  height: auto;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.load-more {
+  margin: 10px auto;
+  max-width: 200px;
+}
