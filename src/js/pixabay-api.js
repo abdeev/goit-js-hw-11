@@ -7,7 +7,7 @@ export class PixabayApi {
     
     constructor() {
         this.page = null;
-        this.pageVolume = 20;
+        this.pageVolume = 10;
         this.inputedValue = '';
     }
     
