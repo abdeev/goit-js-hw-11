@@ -59,12 +59,13 @@ const onSearchFormElSubmit = event => {
                 return;
             }
 
-    console.log(data.hits);
+            console.log(data.hits);
+            
             galleryListEl.insertAdjacentHTML('beforeend', createGalleryItems(data.hits));
             let lightbox = new SimpleLightbox('.photo-card a', {captionsData: 'alt', captionDelay: 250, overlayOpacity: 0.8 });
             Notiflix.Notify.info(`There are ${data.total} pictures found`);
-      btnLoadMoreEl.classList.remove('isHidden');
-      btnLoadMoreEl.addEventListener('click', onLoadMoreBtnElClick);
+            btnLoadMoreEl.classList.remove('isHidden');
+            btnLoadMoreEl.addEventListener('click', onLoadMoreBtnElClick);
     })
         .catch(err => {
         if (err.message === "Network Error") {
