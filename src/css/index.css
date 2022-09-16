@@ -55,13 +55,13 @@ body {
   background-position: center center;
 }
 
-.isHidden {
+.is-hidden {
   display: none;
 }
 .header {
   position: fixed;
   top: 0px;
-  z-index: 5000;
+  z-index: 500;
   display: flex;
   width: 100%;
   padding: 20px 50px;
@@ -132,4 +132,10 @@ input,
 .load-more {
   margin: 10px auto;
   max-width: 200px;
+}
+.simple-lightbox {
+  z-index: 9999;
+}
+.NotiflixNotify {
+  z-index: 5000;
 }
