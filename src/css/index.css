@@ -86,12 +86,24 @@ input,
   transform: scale(1.05);
 }
 .photo-card {
-  width: calc(100% / 4 - 30px);
+  max-width: calc(100% / 1 - 30px);
   display: flex;
   flex-direction: column;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: all 0.3s 0s ease;
+}
+
+@media screen and (min-width: 768px) {
+  .photo-card {
+    max-width: calc(100% / 2 - 30px);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .photo-card {
+    max-width: calc(100% / 4 - 30px);
+  }
 }
 .info {
   display: flex;
@@ -112,10 +124,6 @@ input,
   padding-right: 3px;
   font-size: 10px;
   line-height: 1.5em;
-}
-.photo-card__img {
-  /* width: 100%;
-  height: auto; */
 }
 .container {
   margin-top: 68.5px;
