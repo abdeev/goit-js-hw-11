@@ -23,7 +23,7 @@ const observer = new IntersectionObserver(async (entries, observer) => {
         const { data } = await pixabayApi.fetchPicsByInput();
         galleryListEl.insertAdjacentHTML('beforeend', createGalleryItems(data.hits));
         lightbox.refresh();
-        if (data.total / pixabayApi.pageVolume <= pixabayApi.page) {
+        if (data.totalHits / pixabayApi.pageVolume <= pixabayApi.page) {
             observer.unobserve(targetEl); 
         }
     } catch (err) {
@@ -41,8 +41,8 @@ const onSearchFormElSubmit = async event => {
 
     try {
         const { data } = await pixabayApi.fetchPicsByInput()
-        console.log(data.total);
-        if (data.total === 0) {
+        console.log(data.totalHits);
+        if (data.totalHits === 0) {
                 Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.', {
           position: 'center-top',
           timeout: 7000,
@@ -51,8 +51,8 @@ const onSearchFormElSubmit = async event => {
                 return;
             }
 
-            if (data.total / pixabayApi.pageVolume <= pixabayApi.page) {
-                Notiflix.Notify.info(`There are ${data.total} pictures found`, {
+            if (data.totalHits / pixabayApi.pageVolume <= pixabayApi.page) {
+                Notiflix.Notify.info(`There are ${data.totalHits} pictures found`, {
           position: 'center-top',
           timeout: 7000,
           cssAnimationStyle: 'from-top',
@@ -67,7 +67,7 @@ const onSearchFormElSubmit = async event => {
             
             galleryListEl.insertAdjacentHTML('beforeend', createGalleryItems(data.hits));
             lightbox.refresh();
-            Notiflix.Notify.success(`Hooray! We found ${data.total} images.`, {
+            Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`, {
           position: 'center-top',
           timeout: 7000,
           cssAnimationStyle: 'from-top',
