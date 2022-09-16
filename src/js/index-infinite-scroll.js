@@ -3,6 +3,7 @@ import Notiflix from 'notiflix';
 import createGalleryItems from '../templates/gallery-item.hbs';
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
+import {francAll} from 'franc'
 
 const searchFormEl = document.querySelector('#search-form');
 const galleryListEl = document.querySelector('.gallery');
@@ -37,6 +38,7 @@ const onSearchFormElSubmit = async event => {
     galleryListEl.innerHTML = '';
     
     pixabayApi.inputedValue = event.currentTarget.elements.searchQuery.value;
+    console.log(francAll(pixabayApi.inputedValue));
     pixabayApi.page = 1;
 
     try {
