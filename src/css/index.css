@@ -114,8 +114,8 @@ input,
   line-height: 1.5em;
 }
 .photo-card__img {
-  width: 100%;
-  height: auto;
+  /* width: 100%;
+  height: auto; */
 }
 .container {
   margin-top: 68.5px;
