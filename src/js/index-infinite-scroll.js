@@ -3,11 +3,12 @@ import Notiflix from 'notiflix';
 import createGalleryItems from '../templates/gallery-item.hbs';
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
-import {francAll} from 'franc'
+import { franc, francAll } from 'franc';
 
 const searchFormEl = document.querySelector('#search-form');
 const galleryListEl = document.querySelector('.gallery');
 const targetEl = document.querySelector('.js-target');
+
 
 const pixabayApi = new PixabayApi();
 let lightbox = new SimpleLightbox('.photo-card a', {captionsData: 'alt', captionDelay: 250, overlayOpacity: 0.8 });
@@ -37,8 +38,12 @@ const onSearchFormElSubmit = async event => {
     event.preventDefault();
     galleryListEl.innerHTML = '';
     
-    pixabayApi.inputedValue = event.currentTarget.elements.searchQuery.value;
-    console.log(francAll(pixabayApi.inputedValue));
+  pixabayApi.inputedValue = event.currentTarget.elements.searchQuery.value;
+  const inputEl = document.querySelector('.input');
+  console.log(inputEl.value);
+    console.log(franc(inputEl.value, {
+    only: ['eng', 'rus', 'ukr'], minLength: 3
+  }));
     pixabayApi.page = 1;
 
     try {
